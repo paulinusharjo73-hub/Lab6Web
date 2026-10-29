@@ -1,0 +1,102 @@
+:root {
+  --latar: #eef1f6;
+  --kertas: #ffffff;
+  --tinta: #0f1b2d;
+  --redup: #5b6678;
+  --garis: #d5dbe6;
+  --aksen: #1f4fd8;
+  --aksen-tua: #173aa6;
+  --galat: #b3261e;
+  --sukses: #0f6b52;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--latar);
+  color: var(--tinta);
+  font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+.blok {
+  background: var(--kertas);
+  border: 1px solid var(--garis);
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+h1 { margin: 0 0 8px; font-size: 2rem; letter-spacing: -0.02em; }
+h2 { margin: 0 0 12px; font-size: 1.15rem; letter-spacing: -0.01em; }
+p  { margin: 0 0 12px; }
+code { background: var(--latar); padding: 1px 6px; border-radius: 4px; }
+
+label { display: block; margin: 12px 0 4px; font-weight: 600; }
+label:first-of-type { margin-top: 0; }
+
+input {
+  width: 100%;
+  font: inherit;
+  padding: 10px 12px;
+  border: 1.5px solid var(--garis);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--tinta);
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--aksen);
+  color: #fff;
+  cursor: pointer;
+}
+button:hover { background: var(--aksen-tua); }
+button.sekunder {
+  background: #fff;
+  color: var(--aksen);
+  border: 1.5px solid var(--aksen);
+}
+button.sekunder:hover { background: #eaf0ff; }
+
+:focus-visible { outline: 3px solid var(--aksen); outline-offset: 2px; }
+
+form button[type="submit"] { margin-top: 16px; }
+
+.baris-tombol { display: flex; flex-wrap: wrap; gap: 8px; align-items: stretch; }
+.baris-tombol input { flex: 1 1 200px; width: auto; }
+
+/* Latihan 3 */
+.highlight {
+  color: #173f75;
+  background-color: #e6f1ff;
+  border-left: 4px solid #3478c8;
+  padding: 12px;
+}
+.teks-besar { font-size: 1.4rem; }
+
+/* Latihan 5 */
+#pesanForm { margin: 14px 0 0; min-height: 1.5em; font-weight: 600; }
+#pesanForm.galat { color: var(--galat); }
+#pesanForm.sukses { color: var(--sukses); }
+
+/* Latihan 6 */
+#pesanTugas { margin: 10px 0 0; min-height: 1.5em; color: var(--redup); }
+#daftarTugas { padding-left: 20px; margin: 8px 0 0; }
+.selesai span { text-decoration: line-through; color: #687386; }
+li { margin-bottom: 8px; }
+li button { padding: 4px 10px; margin-right: 6px; font-size: 0.9rem; }
+
+/* Eksperimen 4 */
+.sembunyi { display: none; }

@@ -4,9 +4,9 @@ Mata kuliah Pemrograman Web, Pertemuan 7.
 
 | | |
 |---|---|
-| Nama | _isi nama Anda_ |
-| NIM | _isi NIM Anda_ |
-| Kelas | _isi kelas Anda_ |
+| Nama | _paulinus Risaldi Harjo_ |
+| NIM | _312510452_ |
+| Kelas | _I251D_ |
 
 ## Tujuan
 

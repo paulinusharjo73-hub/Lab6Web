@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Pendaftaran Workshop DOM dan Event</title>
+ <link rel="stylesheet" href="style.css">
+ <script src="script.js" defer></script>
+</head>
+<body>
+ <div class="halaman">
+
+  <header class="kepala">
+   <h1>Daftar workshop DOM dan event JavaScript</h1>
+   <p class="pengantar">Sabtu, 7 November 2026 di Lab Komputer 2. Pilih satu dari tiga sesi, isi data diri, lalu simpan kode tiket Anda.</p>
+  </header>
+
+  <div class="tata-letak">
+
+   <form id="formWorkshop" novalidate>
+    <div class="bidang">
+     <label for="nama">Nama lengkap</label>
+     <input id="nama" name="nama" type="text" autocomplete="name"
+            aria-describedby="galatNama">
+     <p class="galat" id="galatNama"></p>
+    </div>
+
+    <div class="bidang">
+     <label for="email">Email</label>
+     <input id="email" name="email" type="email" autocomplete="email"
+            aria-describedby="galatEmail">
+     <p class="galat" id="galatEmail"></p>
+    </div>
+
+    <div class="bidang">
+     <label for="sesi">Sesi workshop</label>
+     <select id="sesi" name="sesi" aria-describedby="galatSesi infoSesi">
+      <option value="">Pilih sesi</option>
+      <option value="pagi">Sesi pagi: dasar DOM</option>
+      <option value="siang">Sesi siang: event dan interaksi</option>
+      <option value="sore">Sesi sore: validasi form</option>
+     </select>
+     <p class="galat" id="galatSesi"></p>
+     <p class="info-sesi" id="infoSesi" aria-live="polite"></p>
+    </div>
+
+    <div class="bidang">
+     <label for="alasan">Alasan mengikuti (opsional)</label>
+     <textarea id="alasan" name="alasan" rows="4" maxlength="200"></textarea>
+     <p class="hitung"><span id="hitungAlasan">0</span> dari 200 karakter</p>
+    </div>
+
+    <p id="pesanForm" class="pesan-form" aria-live="polite"></p>
+
+    <div class="aksi">
+     <button type="submit" class="utama">Daftar sekarang</button>
+     <button type="button" id="tombolReset" class="sekunder">Hapus isian</button>
+    </div>
+   </form>
+
+   <aside class="tiket" aria-labelledby="judulTiket">
+    <div class="tiket-atas">
+     <h2 id="judulTiket">Tiket Anda</h2>
+     <span id="statusTiket" class="status">Draf</span>
+    </div>
+    <dl class="tiket-isi">
+     <dt>Nama</dt>
+     <dd id="ringNama" class="kosong">Belum diisi</dd>
+     <dt>Email</dt>
+     <dd id="ringEmail" class="kosong">Belum diisi</dd>
+     <dt>Sesi</dt>
+     <dd id="ringSesi" class="kosong">Belum dipilih</dd>
+     <dt>Alasan</dt>
+     <dd id="ringAlasan" class="kosong">Tidak diisi</dd>
+    </dl>
+    <div class="tiket-bawah">
+     <span>Kode tiket</span>
+     <strong id="kodeTiket">belum ada</strong>
+    </div>
+   </aside>
+
+  </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+:root {
+  --latar: #eef1f6;
+  --kertas: #ffffff;
+  --tinta: #0f1b2d;
+  --redup: #5b6678;
+  --garis: #c9d1de;
+  --aksen: #1f4fd8;
+  --aksen-tua: #173aa6;
+  --galat: #b3261e;
+  --galat-latar: #fdecea;
+  --sukses: #0f6b52;
+  --sukses-latar: #e4f5ee;
+  --tiket: #0f1b2d;
+  --tiket-teks: #f2f5fa;
+  --tiket-redup: #a9b4c6;
+  --kode: #ffd166;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--latar);
+  color: var(--tinta);
+  font-family: system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+}
+
+.halaman {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px 20px 56px;
+}
+
+.kepala { max-width: 640px; margin-bottom: 32px; }
+
+h1 {
+  margin: 0 0 12px;
+  font-size: clamp(1.8rem, 4.5vw, 2.7rem);
+  line-height: 1.12;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+.pengantar { margin: 0; color: var(--redup); font-size: 1.05rem; }
+
+/* ---------- Tata letak dua kolom ---------- */
+.tata-letak {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 40px;
+  align-items: start;
+}
+
+/* ---------- Form ---------- */
+form {
+  background: var(--kertas);
+  border: 1px solid var(--garis);
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.bidang { margin-bottom: 20px; }
+
+label { display: block; margin-bottom: 6px; font-weight: 650; }
+
+input, select, textarea {
+  width: 100%;
+  font: inherit;
+  padding: 11px 12px;
+  border: 1.5px solid var(--garis);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--tinta);
+}
+textarea { resize: vertical; }
+
+input.tidak-valid, select.tidak-valid {
+  border-color: var(--galat);
+  background: var(--galat-latar);
+}
+
+:focus-visible { outline: 3px solid var(--aksen); outline-offset: 2px; }
+
+.galat { margin: 6px 0 0; color: var(--galat); font-weight: 600; font-size: 0.95rem; }
+.galat:empty { display: none; }
+
+.info-sesi {
+  margin: 8px 0 0;
+  padding: 10px 12px;
+  border-left: 4px solid var(--aksen);
+  background: #eaf0ff;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.95rem;
+}
+.info-sesi:empty { display: none; }
+
+.hitung { margin: 6px 0 0; color: var(--redup); font-size: 0.9rem; }
+
+.pesan-form { margin: 0 0 16px; padding: 12px 14px; border-radius: 8px; font-weight: 600; }
+.pesan-form:empty { display: none; }
+.pesan-form.galat { color: var(--galat); background: var(--galat-latar); }
+.pesan-form.sukses { color: var(--sukses); background: var(--sukses-latar); }
+
+.aksi { display: flex; flex-wrap: wrap; gap: 10px; }
+
+button {
+  font: inherit;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 44px;
+}
+button.utama { background: var(--aksen); color: #fff; border: 1.5px solid var(--aksen); }
+button.utama:hover { background: var(--aksen-tua); border-color: var(--aksen-tua); }
+button.sekunder { background: #fff; color: var(--aksen); border: 1.5px solid var(--aksen); }
+button.sekunder:hover { background: #eaf0ff; }
+
+/* ---------- Tiket ringkasan (elemen utama halaman) ---------- */
+.tiket {
+  position: sticky;
+  top: 24px;
+  background: var(--tiket);
+  color: var(--tiket-teks);
+  border-radius: 18px;
+}
+
+.tiket-atas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 26px 8px;
+}
+
+.tiket h2 { margin: 0; font-size: 1.3rem; letter-spacing: -0.01em; }
+
+.status {
+  padding: 4px 12px;
+  border: 1.5px solid var(--tiket-redup);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--tiket-redup);
+}
+.status.terdaftar { background: #3ddc97; border-color: #3ddc97; color: #06251a; }
+
+.tiket-isi { margin: 0; padding: 12px 26px 24px; }
+.tiket-isi dt { margin-top: 14px; font-size: 0.9rem; color: var(--tiket-redup); }
+.tiket-isi dd {
+  margin: 2px 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.tiket-isi dd.kosong { color: var(--tiket-redup); font-weight: 400; font-style: italic; }
+
+/* Garis sobekan tiket dengan dua takik */
+.tiket-bawah {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 22px 26px 24px;
+  border-top: 2px dashed #3a4a63;
+}
+.tiket-bawah::before,
+.tiket-bawah::after {
+  content: "";
+  position: absolute;
+  top: -13px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--latar);
+}
+.tiket-bawah::before { left: -12px; }
+.tiket-bawah::after { right: -12px; }
+.tiket-bawah span { color: var(--tiket-redup); font-size: 0.9rem; }
+.tiket-bawah strong { color: var(--kode); font-size: 1.4rem; letter-spacing: 0.04em; }
+
+/* ---------- Responsif ---------- */
+@media (max-width: 860px) {
+  .halaman { padding: 28px 16px 40px; }
+  .tata-letak { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .tiket { position: static; }
+  form { padding: 20px; }
+  .aksi button { flex: 1 1 auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
